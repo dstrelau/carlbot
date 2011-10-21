@@ -1,1 +1,1 @@
-web: cake start
+web: cake build && node lib/server.js
