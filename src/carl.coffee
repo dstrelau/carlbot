@@ -29,7 +29,6 @@ module.exports = class Carl
     @roomList.joinAll (rooms) =>
       for room in rooms
         room.listen (msg) =>
-          util.debug(msg.body)
           for phrase in @phrases when phrase[0].test(msg.body)
             phrase[1](@roomList.findById(msg.roomId),msg)
 
